@@ -36,3 +36,9 @@ name varchar (20),
 tel varchar (20),
 );
 show tables;
+
+
+
+1. use shop -> database changed -> show tables;
+2. insert into member values( 'park' 4가지);
+3. select * from member;
