@@ -1,0 +1,110 @@
+package 반복문;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class 원하는곳에넣기 {
+	private static JTextField t1;
+	private static JTextField t2;
+	private static JTextField t3;
+	private static JTextField textField_3;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		JButton answer = new JButton("answer");
+		JFrame f = new JFrame();
+		f.setSize(576, 653);
+		f.getContentPane().setLayout(null);
+
+		t1 = new JTextField();
+		t1.setFont(new Font("굴림", Font.PLAIN, 40));
+		t1.setBounds(190, 72, 311, 42);
+		f.getContentPane().add(t1);
+		t1.setColumns(10);
+
+		t2 = new JTextField();
+		t2.setFont(new Font("굴림", Font.PLAIN, 40));
+		t2.setBounds(190, 131, 311, 42);
+		f.getContentPane().add(t2);
+		t2.setColumns(10);
+
+		t3 = new JTextField();
+		t3.setFont(new Font("굴림", Font.PLAIN, 40));
+		t3.setBounds(190, 193, 311, 48);
+		f.getContentPane().add(t3);
+		t3.setColumns(10);
+
+		JButton btnNewButton = new JButton("인증");
+		btnNewButton.setBackground(Color.PINK);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String s1 = t2.getText();// 무조권 스트링 글자만!!
+				int year = Integer.parseInt(s1);// String -> int 변환
+				int age = 2019 - year;
+				t3.setText(age + "세");
+
+				String s2 = t1.getText();
+				String s3 = t3.getText();
+			
+				t3.setText(age + "세");
+				
+
+				if (age >= 18) {
+					answer.setText(s3+ "성인 입니다.");
+				} else {
+					 answer.setText(s2+ "성인이 아닙니다.");
+				}
+
+			}
+		});
+
+		btnNewButton.setFont(new Font("굴림", Font.PLAIN, 45));
+		btnNewButton.setBounds(26, 297, 149, 66);
+		f.getContentPane().add(btnNewButton);
+
+	
+		answer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+		answer.setBackground(Color.YELLOW);
+		answer.setFont(new Font("굴림", Font.PLAIN, 30));
+		answer.setBounds(204, 297, 311, 66);
+		f.getContentPane().add(answer);
+
+		JLabel lblNewLabel_1 = new JLabel("이름");
+		lblNewLabel_1.setFont(new Font("굴림", Font.PLAIN, 37));
+		lblNewLabel_1.setBounds(58, 72, 97, 34);
+		f.getContentPane().add(lblNewLabel_1);
+
+		JLabel lblNewLabel_2 = new JLabel("생년");
+		lblNewLabel_2.setFont(new Font("굴림", Font.PLAIN, 37));
+		lblNewLabel_2.setBounds(57, 129, 149, 54);
+		f.getContentPane().add(lblNewLabel_2);
+
+		JLabel lblNewLabel_3 = new JLabel("나이");
+		lblNewLabel_3.setFont(new Font("굴림", Font.PLAIN, 37));
+		lblNewLabel_3.setBounds(58, 195, 80, 42);
+		f.getContentPane().add(lblNewLabel_3);
+
+		textField_3 = new JTextField();
+		textField_3.setFont(new Font("굴림", Font.PLAIN, 23));
+		textField_3.setBackground(Color.GREEN);
+		textField_3.setText("성인 인증 프로그램 입니다. 생년을 입력하세요.");
+		textField_3.setBounds(37, 26, 500, 36);
+		f.getContentPane().add(textField_3);
+		textField_3.setColumns(10);
+
+		f.setVisible(true);
+
+	}
+}
