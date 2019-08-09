@@ -1,0 +1,17 @@
+package project;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Me {
+
+	public Me() {
+
+		JFrame f1 = new JFrame();
+		f1.setSize(500, 500);
+		JLabel me = new JLabel("내가 채 창이야");
+		f1.add(me);
+		f1.setVisible(true);
+
+	}
+}
